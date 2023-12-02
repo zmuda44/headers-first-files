@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- when scaling from larger screen sizes, got messed up with the align-items (without media query css part) putting the dropdown in the center of the page (on media query).
+   can you responsive without having navbar-container.  when i position absolutely in media query it positions absolutely to the bigger container . even if you did a container
+  on whoe website you would still be positioning absolutely to the header.  at extremely small screen sizes i got rid of the image because the image didn't keep scaling from 
+what i remember. this was causing the whole entire background color of the header to stop with image.  using text at extremely small sizes seems to fix this.
+
+this is my first contribution so hopefully if you're reading this you will see that i've gotten a lot better.
+
+also a lot of this stuff im not going to comment internally at first.  later projects will show that i am much more organized-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>First header for Github</title>
@@ -26,7 +34,7 @@
 }
 
 .container ul.is-active {
-  display: block;
+  display: flex;
   
 
 }
@@ -122,10 +130,11 @@
       
     }
     .container ul {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+     
      
       
       
