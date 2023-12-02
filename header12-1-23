@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First header for Github</title>
+  <style>
+.container {
+  display: flex;
+  max-width: 1600px;
+  margin: auto;
+  background-color: black;
+  justify-content: left;
+  
+  align-items: center;
+}
+
+.container ul {
+  display: flex;
+  list-style-type: none;
+ 
+  padding: 0;
+  margin: 0; 
+  
+  
+}
+
+.container ul.is-active {
+  display: block;
+  
+
+}
+
+.container li {
+  position: relative;
+  margin: 0 20px;
+  padding-right: 50px;
+  cursor: pointer;
+  
+  
+  
+}
+
+.container li a {
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: left;
+  color: white;
+  
+}
+
+.container li ul {
+  position: absolute;
+  display: none;
+  padding-bottom: 10px;
+  left: 0;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.container li:hover ul {
+  display: block;
+}
+
+
+.container li ul li {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  
+}
+
+.hero-container {
+  max-width: 1600px;
+  margin: auto;
+}
+
+
+.hero {
+  width: 100%;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    /* width: 100% */
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: red;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .branding-text {
+    display: none;
+  }
+
+  @media(max-width: 1200px) {
+    .hamburger {
+      display: block;
+    }
+
+    .container {
+      justify-content: space-between;
+      padding: 0 75px;
+    }
+
+    .navbar-container {
+      position: relative;
+      height: 100px;
+      width: 100%;
+      align-items: start;
+      
+      
+    }
+    .container ul {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+     
+      
+      
+    }
+
+    .container li {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  @media(max-width: 500px) {
+    .branding-text {
+      display: block;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .header-brand {
+      display: none;
+    }
+  }
+  </style>
+</head>
+<header>
+
+  <div class="container">
+    
+    <div class="branding-container">
+      <img class="header-brand" src="media/upload/header 08-20-22b.png" alt="Greg Bailey Portfolio" class="brand">
+      <p class="branding-text">Greg Bailey Portolio</p>
+    </div>
+    
+    <div class="navbar-container">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">About me</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Video</a>      
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Digital</a>
+          <ul class="subnavbar-nav">
+            <li class="subnav-item">Trade show</li>       
+            <li class="subnav-item">Something</li>       
+            <li class="subnav-item">something else</li>               
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Print</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+ 
+</header>
+<div class="hero-container">
+  <img src="https://placehold.jp/800x150.png" alt=random hero image" class="hero">
+</div>
+
+<script>
+  var hamburger = document.querySelector(".hamburger");
+  var dropdown = document.querySelector(".navbar-nav");
+ 
+  hamburger.addEventListener("click", hamburgerDropdown);
+  
+  function hamburgerDropdown () {
+    dropdown.classList.toggle("is-active");
+  }
+  console.log(dropdown)
+</script>
+<body>
+
+  
+</body>
+</html>
