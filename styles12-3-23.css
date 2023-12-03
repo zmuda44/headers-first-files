@@ -1,0 +1,135 @@
+
+.mainheader {
+  background-color: black;
+  width: 100%;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+/* nothing seems to have changed, i think the only work around i know right now is the hamburger menu */
+/* i think the problem is that the navbar-hav doesn't collapse but the container
+does */
+/* worked the same for <header> with no class */
+/* trying it with container then mainheader nested inside wasnt responsive
+mainheader */
+/* .mainheader {
+  display: flex;
+  background-color: black;
+  width: 100%;
+} */
+
+.navbar-nav {
+  display: flex;
+  color: white;
+  list-style-type: none;
+  font-size: 3rem;
+}
+
+.nav-item {
+  background-color: red;
+  border: solid 1px;
+  padding: 0 10px;
+  margin: 0 10px;
+  position: relative;
+  
+}
+
+.dropdown-menu {
+  /* display: none; */ /* display: none was ruining the transition effect. problem is what if i don't want this to take up space. in this instance it's ok because it's positioned absolute anyway */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: rgb(255,0,0,0.5);
+  width: 100%;
+  left: 0;
+  opacity: 0; /* i want to be able to transition from display none. this is the way i read to do it. want to keep it so it doesnt take up space wheen not visible
+   */
+   transition: opacity 0.7s ease-in;
+}
+
+.nav-item:hover {
+  background-color: blue;
+  transition: all 0.7s ease-in; /* out not working */
+}
+
+/* still trying to use this selector although i realize its the same one as above */
+.nav-item:hover ul {
+  display: block;
+  opacity: 1;
+  
+    /* tutorial sadi you have to use opacity */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  
+}
+
+@media screen and (max-width: 1400px) {
+
+.container {
+  width: 75%;
+}
+
+.navbar-collapse {
+  position: relative;
+}
+  .navbar-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+  }
+
+  .is-active {
+    display: block;
+  }
+
+  .nav-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .dropdown-menu {
+    background-color: rgb(255,0,0,0.5);
+    transition: opacity 0.7s ease-in;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+.nav-item:hover ul {
+  display: block;
+  transition: opacity 0.7s ease-in;
+  opacity: 1;
+  transition: all 0.7s ease-in;
+}
+
+ .dropdown-menu {
+  position: static;
+  display: none;
+  
+  color: white;
+}
+
+
+.bar {
+  display: block;
+  height: 5px;
+  width: 30px;
+  background-color: aqua;
+  margin-bottom: 5px;
+}
+}
