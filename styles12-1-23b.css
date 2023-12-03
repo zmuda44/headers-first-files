@@ -1,0 +1,61 @@
+.container {
+  max-width: 1600px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  background-color: black;
+}
+
+.navbar-nav {
+  display: flex;
+  color: white;
+  list-style-type: none;
+  font-size: 3rem;
+}
+
+.nav-item {
+  background-color: red;
+  border: solid 1px;
+  padding: 0 10px;
+  margin: 0 10px;
+  position: relative;
+  
+}
+
+.dropdown-menu {
+  /* display: none; */ /* display: none was ruining the transition effect. problem is what if i don't want this to take up space. in this instance it's ok because it's positioned absolute anyway */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: rgb(255,0,0,0.5);
+  width: 100%;
+  left: 0;
+  opacity: 0; /* i want to be able to transition from display none. this is the way i read to do it. want to keep it so it doesnt take up space wheen not visible
+   */
+   transition: opacity 2s ease-in-out;
+}
+
+.nav-item:hover {
+  background-color: blue;
+  /* transition: all 0.7s ease;  */
+}
+
+.nav-item:hover ul {
+  display: block;
+  opacity: 1;
+  
+    /* tutorial sadi you have to use opacity */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  
+}
+
+
+
